@@ -1,7 +1,7 @@
 ionic-fab button with ionic
 =======================================
 
-## fab button for ionic framework as similer like Linkedin fab button
+## fab button for ionic framework as similer animation like Linkedin fab button
 
 ![alt tag](https://raw.githubusercontent.com/PraveenJP/ionic-fab/master/www/img/SS.PNG)
 
