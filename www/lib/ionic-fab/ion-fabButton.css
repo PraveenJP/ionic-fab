@@ -1,0 +1,141 @@
+.animated {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+@-webkit-keyframes zoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+.zoomIn {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+}
+
+@-webkit-keyframes zoomOut {
+      from {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+      }
+
+      to {
+        opacity: 0;
+  }
+}
+
+@keyframes zoomOut {
+    from {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+      }
+
+      to {
+        opacity: 0;
+      }
+    }
+
+.zoomOut {
+    -webkit-animation-name: zoomOut;
+    animation-name: zoomOut;
+}
+
+/*Right fab button*/
+
+.fab-button-right {
+    background-color: rgb(63, 81, 181);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    border: none;
+    z-index: 20;
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+    -webkit-transition-property: -webkit-transform, box-shadow;
+    transition-property: transform, box-shadow;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.fab-button-right.activated {
+    opacity: 0.9;
+    -webkit-transform: translate3d(0, -1px, 0);
+    transform: translate3d(0, -1px, 0);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+.fab-button-right .icon {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+/*Left fab button*/
+
+.fab-button-left {
+    background-color: rgb(63, 81, 181);
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    border: none;
+    z-index: 20;
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+    -webkit-transition-property: -webkit-transform, box-shadow;
+    transition-property: transform, box-shadow;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.fab-button-left.activated {
+    opacity: 0.9;
+    -webkit-transform: translate3d(0, -1px, 0);
+    transform: translate3d(0, -1px, 0);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+.fab-button-left .icon {
+    font-size: 24px;
+    color: #ffffff;
+}
