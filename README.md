@@ -44,7 +44,20 @@ $ ionic run android
 
 ## Using fab button
 
-place button after the ion-content
+Add css and js file into the index.html file
+
+``` bash
+  <link href="lib/ionic-fab/ion-fabButton.css" rel="stylesheet">
+  <script src="lib/ionic-fab/ion-fabButton.js"></script>
+```
+
+Then add ionic-fab-button dependency into the app.js file
+
+``` bash
+angular.module('starter', ['ionic','ion-fab-button'])
+```
+
+finally place fab button after the ion-content as you want
 
 Right fab button
 
