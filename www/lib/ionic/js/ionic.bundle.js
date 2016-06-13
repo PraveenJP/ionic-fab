@@ -1612,7 +1612,7 @@ window.ionic.version = '1.2.4';
    *
    * after the gesture detection session has been completed (user has released the screen)
    * the ionic.Gestures.detectionic.current object is copied into ionic.Gestures.detectionic.previous,
-   * this is usefull for gestures like doubletap, where you need to know if the
+   * this is useful for gestures like doubletap, where you need to know if the
    * previous gesture was a tap
    *
    * options that have been set by the instance can be received by calling inst.options
