@@ -68,6 +68,8 @@
     animation-name: zoomOut;
 }
 
+
+
 /*Right fab button*/
 
 .fab-button-right {
@@ -102,6 +104,13 @@
 .fab-button-right .icon {
     font-size: 24px;
     color: #ffffff;
+}
+
+
+/* custom css class style*/
+
+.fab-button-right.app-fab-btn{
+  background-color: #ffc900;
 }
 
 /*Left fab button*/
