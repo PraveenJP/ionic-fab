@@ -44,7 +44,6 @@
 
     to {
       opacity: 0;
-      z-index: -1 !important;
     }
 }
 
@@ -61,13 +60,13 @@
 
       to {
         opacity: 0;
-        z-index: -1 !important;
       }
     }
 
 .zoomOut {
     -webkit-animation-name: zoomOut;
     animation-name: zoomOut;
+    z-index: -1 !important;
 }
 
 
@@ -92,7 +91,7 @@
     -webkit-transition: 0.2s linear;
     transition: 0.2s linear;
     -webkit-transition-property: -webkit-transform, box-shadow, z-index;
-    transition-property: transform, box-shadow;
+    transition-property: transform, box-shadow, z-index;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
