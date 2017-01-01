@@ -6,7 +6,10 @@ var app = angular.module('ion-fab-button', [])
             replace: true,
             transclude: true,
             template: template,
-            link: link
+            link: link,
+            scope:{
+              cssClass: "@",  //for additional custom styling
+            }
         };
         //isAnchor
         function isAnchor(attr) {
@@ -14,9 +17,10 @@ var app = angular.module('ion-fab-button', [])
         }
         //template
         function template(element, attr) {
+            var cssClass = attr.cssClass? attr.cssClass: "";
             return isAnchor(attr) ?
-                '<a class="fab-button-right" ng-transclude></a>' :
-                '<button class="fab-button-right" ng-transclude></button>';
+                '<a class="fab-button-right ' + cssClass + '" ng-transclude></a>' :
+                '<button class="fab-button-right ' + cssClass + '" ng-transclude></button>';
         }
         //link
         function link(scope, element, attr) {
@@ -25,22 +29,19 @@ var app = angular.module('ion-fab-button', [])
             //element.style=bgColor;
             var targetEl = angular.element(document.querySelector(target));
             var savePos = 0;
+            var isIOS = ionic.Platform.isIOS();     //identify the device for animations calculations
             targetEl.bind('scroll', function (e) {
-                //console.log(savePos)
-                if (savePos < e.detail.scrollTop) {
-                    savePos = e.detail.scrollTop;
+                var target = (isIOS && e.detail)? e.detail : e.target;  //get the target for scrollTop calculations
+                if (savePos < target.scrollTop) {
+                    savePos = target.scrollTop;
                     element.removeClass('zoomIn animated');
                     element.addClass('zoomOut animated');
                 }
-                if (savePos > e.detail.scrollTop) {
-                    savePos = e.detail.scrollTop;
+                if (savePos > target.scrollTop) {
+                    savePos = target.scrollTop;
                     element.removeClass('zoomOut animated');
                     element.addClass('zoomIn animated');
                 }
-                // var timeout = setInterval(function(){
-                //     element.removeClass('zoomOut animated');
-                //     element.addClass('zoomIn animated');
-                // },3000);
             });
         }
     });
@@ -59,9 +60,10 @@ var app = angular.module('ion-fab-button', [])
         }
         //template
         function template(element, attr) {
+            var cssClass = attr.cssClass? attr.cssClass: "";
             return isAnchor(attr) ?
-                '<a class="fab-button-left" ng-transclude></a>' :
-                '<button class="fab-button-left" ng-transclude></button>';
+                '<a class="fab-button-left ' + cssClass + '" ng-transclude></a>' :
+                '<button class="fab-button-left ' + cssClass + '" ng-transclude></button>';
         }
         //link
         function link1(scope, element, attr) {
@@ -70,15 +72,17 @@ var app = angular.module('ion-fab-button', [])
             //element.style=bgColor;
             var targetEl = angular.element(document.querySelector(target));
             var savePos = 0;
+            var isIOS = ionic.Platform.isIOS();     //identify the device for animations calculations
+
             targetEl.bind('scroll', function (e) {
-                //console.log(savePos)
-                if (savePos < e.detail.scrollTop) {
-                    savePos = e.detail.scrollTop;
+                var target = (isIOS && e.detail)? e.detail : e.target;  //get the target for scrollTop calculations
+                if (savePos < target.scrollTop) {
+                    savePos = target.scrollTop;
                     element.removeClass('fadeInUp animated');
                     element.addClass('fadeOutDown animated');
                 }
-                if (savePos > e.detail.scrollTop) {
-                    savePos = e.detail.scrollTop;
+                if (savePos > target.scrollTop) {
+                    savePos = target.scrollTop;
                     element.removeClass('fadeOutDown animated');
                     element.addClass('fadeInUp animated');
                 }
